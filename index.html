@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RailWayGo - Online Railway Ticket</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>RailWayGo</h1>
+      <p>Book your railway tickets online in minutes.</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Search Trains</h2>
+        <form id="searchForm" class="grid-form">
+          <label>
+            From
+            <input type="text" id="from" placeholder="City or station" required />
+          </label>
+
+          <label>
+            To
+            <input type="text" id="to" placeholder="City or station" required />
+          </label>
+
+          <label>
+            Journey Date
+            <input type="date" id="journeyDate" required />
+          </label>
+
+          <label>
+            Class
+            <select id="travelClass" required>
+              <option value="SL">Sleeper (SL)</option>
+              <option value="3A">AC 3 Tier (3A)</option>
+              <option value="2A">AC 2 Tier (2A)</option>
+              <option value="1A">AC First Class (1A)</option>
+            </select>
+          </label>
+
+          <label>
+            Passengers
+            <input type="number" id="passengers" min="1" max="6" value="1" required />
+          </label>
+
+          <button type="submit" class="btn">Find Trains</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Available Trains</h2>
+        <div id="trainResults" class="results empty">
+          Search with route details to view trains.
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Passenger Details</h2>
+        <form id="bookingForm" class="grid-form disabled-form">
+          <label>
+            Full Name
+            <input type="text" id="fullName" required />
+          </label>
+
+          <label>
+            Age
+            <input type="number" id="age" min="1" max="120" required />
+          </label>
+
+          <label>
+            Gender
+            <select id="gender" required>
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <label>
+            Mobile Number
+            <input type="tel" id="mobile" pattern="[0-9]{10}" placeholder="10-digit number" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" id="email" placeholder="name@example.com" required />
+          </label>
+
+          <button type="submit" class="btn btn-primary">Book Ticket</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Ticket</h2>
+        <div id="ticketArea" class="results empty">
+          Your confirmed ticket will appear here after booking.
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Demo application for online railway ticket booking.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
